@@ -383,7 +383,6 @@ footer {
 
     #about img {
         max-width: 80%;
-        height: 100%;
-        margin: 0;
+        margin: 0 0 10% 0;
     }
 }
