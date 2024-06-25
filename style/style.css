@@ -226,7 +226,7 @@ footer {
 }
 
 .toggle::before {
-  content: "☀️🌙";
+  content: "☀️🌑";
   font-size: 1rem;
   grid-area: 1 / -1;
   padding: 1px;
@@ -235,10 +235,11 @@ footer {
   transition: all 250ms ease;
   border-radius: var(--width);
   background-color: #0a2353;
+  box-shadow: 0 0 0 2px #63ace5;
 }
 
 .toggle:hover::before {
-  box-shadow: 0 0 0 2px #63ace5;
+  box-shadow: 0 0 0 2px #e2e8f0;
 }
 
 .toggle::after {
