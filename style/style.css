@@ -227,7 +227,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 2px 0 0 0;
+    padding: 1px 0 1px 0;
 }
   
 .darkmode-toggle-checkbox {
@@ -237,7 +237,7 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
 }
   
@@ -254,19 +254,41 @@ footer {
     box-sizing: border-box;
     box-shadow: 0 0 calc(var(--darkmode-toggle-width) / 10) #63ace5;
     transition: 0.1s ease-in;
+    z-index: 1;
 }
   
 .darkmode-toggle-checkbox:checked + .darkmode-toggle-circle {
     left: calc(var(--darkmode-toggle-width) / 2 - 1px);
     right: 0;
 }
-  
+
 .darkmode-toggle-emoji {
-    font-size: calc(var(--darkmode-toggle-height) * 0.7);
-    line-height: 0;
-    color: #112c71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
   
+.darkmode-toggle-emoji img {
+    width: 18px;
+    line-height: 0;
+   filter: invert(14%) sepia(45%) saturate(3321%) hue-rotate(213deg) brightness(90%) contrast(100%);
+} 
+
+.darkmode-toggle-emoji img {
+    width: 18px;
+    line-height: 0;
+   filter: invert(14%) sepia(45%) saturate(3321%) hue-rotate(213deg) brightness(90%) contrast(100%);
+} 
+
+.darkmode-toggle-wrapper :nth-child(3) :nth-child(1){
+    position: relative;
+    left: 1px;
+} 
+
+.darkmode-toggle-wrapper :nth-child(4) :nth-child(1) {
+    position: relative;
+    right: 1px;
+} 
 
 
 @keyframes blobify {
