@@ -238,7 +238,7 @@ body.light-mode #intro div h1:nth-child(3), body.light-mode #intro h4, body.ligh
     font-family: SFMono, sans-serif;
     line-height: 1;
     text-decoration: none;
-    transition: all 1s linear;
+    transition: all 0.3s linear;
     margin-top: 50px;
 }
 
@@ -251,10 +251,12 @@ body.light-mode #intro a  {
     background-color: #63ace5;
     color: #e2e8f0;
     box-shadow: 5px 5px 0px 0px rgba(226,232,240,1);
+    transition: all 0.3s linear;
 }
 
 body.light-mode #intro a:hover  {
     color: #e2e8f0;
+    transition: all 0.3s linear;
 }
 
 b {
@@ -284,6 +286,7 @@ footer {
     filter: invert(90%) sepia(96%) saturate(6574%) hue-rotate(178deg) brightness(100%) contrast(94%);
     /* arriba | derecha | abajo | izquierda */
     margin: 2px 18px 0 0;
+    padding: 2px 0 0 0;
 }
 
 body.light-mode #social-icons img {
@@ -394,13 +397,18 @@ body.light-mode .darkmode-toggle-emoji img {
     height: 100%;
     border-radius: 4px;
     margin-right: 5%;
-    filter: brightness(80%);
+    border: 2px solid #63ace5;
+    transition: all 0.3s linear;
+}
+
+#about img:hover {
+    box-shadow: 10px 10px 0px 0px rgba(226,232,240,1);
+    transition: all 0.3s linear;
 }
 
 #about h1 {
     font-size: clamp(20px, 8vw, 40px);
     line-height: 1.1;
-    transition: all 1s linear;
 }
 
 ::-webkit-scrollbar {
@@ -442,7 +450,6 @@ body.light-mode .darkmode-toggle-emoji img {
 #skills h1 {
     font-size: clamp(20px, 8vw, 40px);
     line-height: 1.1;
-    transition: all 1s linear;
 }
 
 #skills ul {
@@ -463,7 +470,6 @@ body.light-mode .darkmode-toggle-emoji img {
 #skillsLists h2 {
     font-size: 1rem;
     text-transform: uppercase;
-    transition: all 1s linear;
 }
 
 #skills div {
