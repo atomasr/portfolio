@@ -5,6 +5,11 @@
     src: url("SFMonoFont/SFMono-Light.otf") format("opentype");
 }
 
+@font-face {
+    font-family: SFBold;
+    src: url("SFMonoFont/SFMono-Bold.otf") format("opentype");
+}
+
 @supports (font-variation-settings: normal) {
     :root { font-family: InterVariable, sans-serif; }
 }
@@ -21,10 +26,17 @@
 
 body {
     font-family: InterVariable, sans-serif;
-    background-color: rgb(15 23 42);
+    background-color: #0f172a;
     color: #e2e8f0;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
+    transition: all 1s linear;
+}
+
+body.light-mode {
+    color: #022954;
+    background-color: #e2e8f0;
+    transition: all 1s linear;
 }
 
 nav {
@@ -68,6 +80,18 @@ nav {
     border-radius:6px;
 }
 
+.hamburger:hover .bar {
+    background-color: #63ace5;
+}
+
+body.light-mode .bar {
+    background-color: #112c71;
+}
+
+body.light-mode .hamburger:hover .bar {
+    background-color: #0077b6;;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -79,14 +103,35 @@ nav ul {
     text-decoration: none;
     font-family: SFMono, sans-serif;
 }
+
+nav a {
+    text-decoration: none;
+    color: #e2e8f0;;
+}
+
+body.light-mode nav a {
+    color: #022954;
+}
+
+body.light-mode .nav-links {
+    color: #2a4d69;
+}
   
-.nav-links:hover {
+.nav-links:hover, nav a:hover {
     color: #63ace5;
+}
+
+body.light-mode .nav-links:hover, body.light-mode nav a:hover {
+    color: #0077b6;
 }
 
 ul li a span {
     color: #63ace5;
     padding-right: 5px;
+}
+
+body.light-mode ul li a span {
+    color: #0077b6;
 }
 
 h2 {
@@ -97,15 +142,17 @@ h2 {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: linear-gradient(120deg, #112c71, #0a2353);
+    background: linear-gradient(120deg, #112c71, #0f172a);
     z-index: -1;
+    opacity: 1;
+    transition: opacity 1s linear;
 
     &::before {
         content: '';
         position: absolute;
         width: 80%;
         height: 80%;
-        background: radial-gradient(circle at top left, #5B58EB 30%, #56E1E9 110%);
+        background: radial-gradient(circle at top left, #413fad 30%, #4ca2a7 110%);
         border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
         left: -20%;
         top: -20%;
@@ -118,7 +165,7 @@ h2 {
         position: absolute;
         width: 80%;
         height: 80%;
-        background: radial-gradient(circle at bottom right, #4ecaff, #5B58EB 90%);
+        background: radial-gradient(circle at bottom right, #4ca2a7, #413fad 90%);
         border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
         right: -15%;
         bottom: -30%;
@@ -127,7 +174,12 @@ h2 {
     }
 }
 
-.intro div{
+body .background-light {
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+#intro div{
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
@@ -139,36 +191,44 @@ h2 {
     width: 50%;
 }
 
-.intro {
+#intro {
     display: flex;
     justify-content: center;
 }
 
-.intro h4, p {
+#intro h4, p {
     margin: 20px 0px 0px;
-    max-width: 540px;
+    max-width: 640px;
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 400;
     color: #ccd6f6;
+    transition: all 1s linear;
 }
 
-.intro h3 {
+#intro h3 {
     font-size: clamp(14px,5vw,16px);
     font-family: SFMono, sans-serif;
     margin-bottom: 30px;
+    color: #63ace5;
 }
 
-.intro h1 {
+#intro h1 {
     font-size: clamp(40px, 8vw, 80px);
     line-height: 1.1;
 }
 
-.intro div h1:nth-child(3) {
+#intro div h1:nth-child(3) {
     color: #ccd6f6;
+    transition: all 1s linear;
 }
 
-.intro a {
+body.light-mode #intro div h1:nth-child(3), body.light-mode #intro h4, body.light-mode p, body.light-mode #skillsLists li {
+    color: #2a4d69;
+    transition: all 1s linear;
+}
+
+#intro a {
     color: #63ace5;
     background-color: transparent;
     border: 1px solid #63ace5;
@@ -178,14 +238,31 @@ h2 {
     font-family: SFMono, sans-serif;
     line-height: 1;
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 1s linear;
     margin-top: 50px;
 }
 
-.intro a:hover {
+body.light-mode #intro a  {
+    color: #0077b6;
+    border: 1px solid #0077b6;
+}
+
+#intro a:hover {
     background-color: #63ace5;
     color: #e2e8f0;
     box-shadow: 5px 5px 0px 0px rgba(226,232,240,1);
+}
+
+body.light-mode #intro a:hover  {
+    color: #e2e8f0;
+}
+
+b {
+    color: #63ace5;
+}
+
+body.light-mode b, body.light-mode #intro h3 {
+    color: #0077b6;
 }
 
 footer {
@@ -206,7 +283,11 @@ footer {
     height: 24px;
     filter: invert(90%) sepia(96%) saturate(6574%) hue-rotate(178deg) brightness(100%) contrast(94%);
     /* arriba | derecha | abajo | izquierda */
-    padding: 2px 18px 0 0;
+    margin: 2px 18px 0 0;
+}
+
+body.light-mode #social-icons img {
+    filter: invert(8%) sepia(63%) saturate(3614%) hue-rotate(201deg) brightness(99%) contrast(98%);
 }
 
 #social-icons a {
@@ -229,6 +310,10 @@ footer {
     align-items: center;
     justify-content: space-around;
     padding: 1px 0 1px 0;
+}
+
+body.light-mode .darkmode-toggle-wrapper {
+    background: #022954;
 }
   
 .darkmode-toggle-checkbox {
@@ -275,11 +360,10 @@ footer {
    filter: invert(14%) sepia(45%) saturate(3321%) hue-rotate(213deg) brightness(90%) contrast(100%);
 } 
 
-.darkmode-toggle-emoji img {
-    width: 18px;
-    line-height: 0;
-   filter: invert(14%) sepia(45%) saturate(3321%) hue-rotate(213deg) brightness(90%) contrast(100%);
-} 
+body.light-mode .darkmode-toggle-emoji img {
+    filter: invert(97%) sepia(6%) saturate(806%) hue-rotate(181deg) brightness(96%) contrast(96%);
+}
+
 
 .darkmode-toggle-wrapper :nth-child(3) :nth-child(1){
     position: relative;
@@ -310,11 +394,13 @@ footer {
     height: 100%;
     border-radius: 4px;
     margin-right: 5%;
+    filter: brightness(80%);
 }
 
 #about h1 {
     font-size: clamp(20px, 8vw, 40px);
     line-height: 1.1;
+    transition: all 1s linear;
 }
 
 ::-webkit-scrollbar {
@@ -356,6 +442,7 @@ footer {
 #skills h1 {
     font-size: clamp(20px, 8vw, 40px);
     line-height: 1.1;
+    transition: all 1s linear;
 }
 
 #skills ul {
@@ -370,15 +457,57 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: all 1s linear;
 }
 
 #skillsLists h2 {
     font-size: 1rem;
     text-transform: uppercase;
+    transition: all 1s linear;
 }
 
 #skills div {
     display: flex;
+}
+
+body.light-mode .background {
+    opacity: 0;
+}
+
+body.light-mode .background-light {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #e7eff6, #adcbe3);
+    z-index: -2;
+    opacity: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background: radial-gradient(circle at top left, #adcbe3  30%, #63ace5 110%);
+        border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+        left: -20%;
+        top: -20%;
+        filter: blur(150px);
+        animation: blobify 7s ease-in-out 0s infinite;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background: radial-gradient(circle at bottom right, #63ace5, #adcbe3  90%);
+        border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+        right: -15%;
+        bottom: -30%;
+        filter: blur(150px);
+        animation: blobify 10s ease-in-out 0s infinite;
+    }
+    
 }
 
 
@@ -430,6 +559,11 @@ footer {
       transition: 0.6s ease-in-out;
       z-index: 10;
     }
+
+    body.light-mode .nav-menu {
+        background-color: #adcbe3;
+    }
+
     .active {
       right: 0% !important;
     }
@@ -437,7 +571,7 @@ footer {
       font-size:24px;
     }
 
-    .intro div, #about div{
+    #intro div, #about div{
         width: 80%;
     }
 
