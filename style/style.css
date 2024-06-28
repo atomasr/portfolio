@@ -524,6 +524,7 @@ body.light-mode .background-light {
 
 .no-scroll {
     overflow-y: hidden;
+    position: fixed;
 }
 
 @keyframes blobify {
