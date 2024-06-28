@@ -1,9 +1,12 @@
 "use strict";
 
 let prevScrollPos = window.scrollY;
+let hamburgerMenu = document.querySelector(".hamburger");
+
 window.onscroll = function() {
   let currentScrollPos = window.scrollY;
-  if (Math.abs(prevScrollPos) > currentScrollPos) {
+  console.log(currentScrollPos);
+  if ((Math.abs(prevScrollPos) > currentScrollPos)||(currentScrollPos < 100)||(hamburgerMenu.classList.contains("active"))) {
     document.querySelector("nav").classList.remove("hideNav");
     document.querySelector("footer").classList.remove("hideFooter");
   } else {
