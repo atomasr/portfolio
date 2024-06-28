@@ -524,7 +524,6 @@ body.light-mode .background-light {
 
 .no-scroll {
     overflow-y: hidden;
-    position: fixed;
 }
 
 @keyframes blobify {
@@ -574,6 +573,7 @@ body.light-mode .background-light {
       text-align: center;
       transition: 0.8s ease-in-out, height 0s;
       z-index: 10;
+      touch-action: none;
     }
 
     body.light-mode .nav-menu {
