@@ -15,3 +15,9 @@ window.onscroll = function() {
   }
   prevScrollPos = currentScrollPos;
 }
+
+window.addEventListener('resize', function listen(event) {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    body.classList.remove("no-scroll");
+  }, true);
