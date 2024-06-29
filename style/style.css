@@ -51,6 +51,7 @@ nav {
     position: fixed;
     top: 0;
     transition: top 0.3s linear;
+    z-index: 1;
 }
 
   
@@ -292,6 +293,7 @@ footer {
     position: fixed;
     bottom: 0;
     transition: bottom 0.3s linear;
+    z-index: 1;
 }
 
 #social-icons img {
@@ -452,6 +454,7 @@ body.light-mode .darkmode-toggle-emoji img {
     -webkit-backdrop-filter: blur(5.7px);
     border: 1px solid rgba(255, 255, 255, 0.28);
     padding: 10px;
+    z-index: 0;
 }
 
 .workWrapper .imageWorkWrapper {
@@ -509,6 +512,14 @@ body.light-mode .darkmode-toggle-emoji img {
     height: 20px;
 }
 
+.infoWrapper ul li:hover, .infoWrapper h2 span:hover {
+    color: #63ace5;
+}
+
+body.light-mode .infoWrapper h2 span:hover {
+    color: #0077b6;
+}
+
 .infoWrapper .externalLinks {
     width: 20%;
     display: flex;
@@ -519,14 +530,27 @@ body.light-mode .darkmode-toggle-emoji img {
 .infoWrapper h2 {
     font-size: clamp(24px, 5vw, 28px);
     font-family: InterVariable, sans-serif;
+    transition: all 1s linear;
 }
+
+body.light-mode .infoWrapper h2 {
+    color: #022954;
+    transition: all 1s linear;
+}
+
 
 .infoWrapper h2 span {
     color: #0f172a;
 }
 
 .infoWrapper h4 {
+    transition: all 1s linear;
     color: #adcbe3;
+}
+
+body.light-mode .infoWrapper h4 {
+    color: #2a4d69;
+    transition: all 1s linear;
 }
 
 .infoWrapper p {
@@ -539,6 +563,14 @@ body.light-mode .darkmode-toggle-emoji img {
     width: 24px;
     filter: invert(6%) sepia(27%) saturate(3551%) hue-rotate(203deg) brightness(91%) contrast(94%);
     margin-left: 5px;
+}
+
+.infoWrapper a img:hover {
+    filter: invert(57%) sepia(98%) saturate(278%) hue-rotate(168deg) brightness(95%) contrast(88%);
+}
+
+body.light-mode .infoWrapper a img:hover {
+    filter: invert(31%) sepia(80%) saturate(986%) hue-rotate(168deg) brightness(101%) contrast(106%);
 }
 
 #worksWrapper {
@@ -691,7 +723,7 @@ body.light-mode .background-light {
       height: 100dvh;
       text-align: center;
       transition: 0.8s ease-in-out, height 0s;
-      z-index: 10;
+      z-index: 1;
       touch-action: none;
     }
 
@@ -768,5 +800,19 @@ body.light-mode .background-light {
 
     .workWrapper {
         margin-top: 10%;
+        flex-direction: column;
+    }
+
+    .infoWrapper, .workWrapper .imageWorkWrapper {
+        max-width: 98%;
+        padding: 0 1% 0 1%;
+    }
+
+    .workWrapper .imageWorkWrapper {
+        margin-bottom: 10px;
+    }
+
+    .workWrapper .imageWork {
+        border-radius: 4px;
     }
 }
