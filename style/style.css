@@ -446,7 +446,6 @@ body.light-mode .darkmode-toggle-emoji img {
 .workWrapper {
     max-width: 95%;
     display: flex;
-
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -455,6 +454,7 @@ body.light-mode .darkmode-toggle-emoji img {
     border: 1px solid rgba(255, 255, 255, 0.28);
     padding: 10px;
     z-index: 0;
+    margin: 0 0 2.5% 0;
 }
 
 .workWrapper .imageWorkWrapper {
@@ -510,14 +510,17 @@ body.light-mode .darkmode-toggle-emoji img {
     border-radius: 9999px;
     padding: 4px 12px;
     height: 20px;
+    transition: all 0.3s linear;
 }
 
 .infoWrapper ul li:hover, .infoWrapper h2 span:hover {
     color: #63ace5;
+    transition: all 0.3s linear;
 }
 
 body.light-mode .infoWrapper h2 span:hover {
     color: #0077b6;
+    transition: all 0.3s linear;
 }
 
 .infoWrapper .externalLinks {
@@ -541,6 +544,7 @@ body.light-mode .infoWrapper h2 {
 
 .infoWrapper h2 span {
     color: #0f172a;
+    transition: all 0.3s linear;
 }
 
 .infoWrapper h4 {
@@ -563,19 +567,23 @@ body.light-mode .infoWrapper h4 {
     width: 24px;
     filter: invert(6%) sepia(27%) saturate(3551%) hue-rotate(203deg) brightness(91%) contrast(94%);
     margin-left: 5px;
+    transition: all 0.3s linear;
 }
 
 .infoWrapper a img:hover {
     filter: invert(57%) sepia(98%) saturate(278%) hue-rotate(168deg) brightness(95%) contrast(88%);
+    transition: all 0.3s linear;
 }
 
 body.light-mode .infoWrapper a img:hover {
     filter: invert(31%) sepia(80%) saturate(986%) hue-rotate(168deg) brightness(101%) contrast(106%);
+    transition: all 0.3s linear;
 }
 
 #worksWrapper {
     display: flex;
     width: 50%;
+    flex-direction: column;
 }
 
 #skillsLists {
@@ -758,7 +766,7 @@ body.light-mode .background-light {
         height:auto;
     }
 
-    #skills, #experience {
+    #skills {
         flex-direction: column;
         align-items: center;
         margin-left: 0;
@@ -794,12 +802,22 @@ body.light-mode .background-light {
         transition: bottom 0.3s linear;
     }
 
+}
+
+@media (max-width: 1200px) {
+    #experience {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        text-align: center;
+    }
+
     #worksWrapper {
         width: 80%;
     }
 
     .workWrapper {
-        margin-top: 10%;
+        margin: 10% 0 0 0;
         flex-direction: column;
     }
 
