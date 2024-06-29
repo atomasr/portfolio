@@ -528,6 +528,7 @@ body.light-mode .infoWrapper h2 span:hover {
     display: flex;
     justify-content: end;
     align-items: end;
+    flex-wrap: wrap;
 }
 
 .infoWrapper h2 {
@@ -561,6 +562,7 @@ body.light-mode .infoWrapper h4 {
     margin: 0;
     text-align: justify;
     margin-bottom: 15px;
+    max-width: 100%;
 }
 
 .infoWrapper a img{
@@ -601,20 +603,20 @@ body.light-mode .infoWrapper a img:hover {
 }
 
 
-#skills, #experience {
+#skills, #experience, #projects {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 10%;
     margin-left: 5%;
 }
 
-#skills h1, #experience h1 {
+#skills h1, #experience h1, #projects h1 {
     font-size: clamp(20px, 8vw, 40px);
     line-height: 1.1;
 }
 
-#experience h1 {
-    width: 20%;
+.workTitleWrapper {
+    width: 12%;
 }
 
 #skills ul {
@@ -805,7 +807,7 @@ body.light-mode .background-light {
 }
 
 @media (max-width: 1200px) {
-    #experience {
+    #experience, #projects {
         flex-direction: column;
         align-items: center;
         margin-left: 0;
@@ -814,6 +816,8 @@ body.light-mode .background-light {
 
     #worksWrapper {
         width: 80%;
+        display: flex;
+        align-items: center;
     }
 
     .workWrapper {
@@ -832,5 +836,9 @@ body.light-mode .background-light {
 
     .workWrapper .imageWork {
         border-radius: 4px;
+    }
+
+    .workTitleWrapper {
+        width: 100%;
     }
 }
