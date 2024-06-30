@@ -528,7 +528,6 @@ body.light-mode .infoWrapper h2 span:hover {
     display: flex;
     justify-content: end;
     align-items: end;
-    flex-wrap: wrap;
 }
 
 .infoWrapper h2 {
@@ -546,6 +545,7 @@ body.light-mode .infoWrapper h2 {
 .infoWrapper h2 span {
     color: #0f172a;
     transition: all 0.3s linear;
+    margin-left: 1%;
 }
 
 .infoWrapper h4 {
@@ -582,10 +582,60 @@ body.light-mode .infoWrapper a img:hover {
     transition: all 0.3s linear;
 }
 
-#worksWrapper {
+#worksWrapper, #tablesWrapper {
     display: flex;
     width: 50%;
     flex-direction: column;
+}
+
+.tableWrapper {
+    max-width: 95%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    z-index: 0;
+    margin: 0 0 2.5% 0;
+    padding: 10px
+}
+
+.tableWrapper div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableWrapper div :nth-child(1){
+    padding: 0 2.5% 0 0;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.28);
+    border-style: none solid none none;
+    font-family: 'SFMono', sans-serif;
+    text-align: center;
+    width: 60%;
+}
+
+.tableWrapper div :nth-child(2){
+    padding: 0 2.5% 0 2.5%;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.28);
+    border-style: none solid none none;
+    color: #0f172a;
+    width: 20%;
+}
+
+.tableWrapper div :nth-child(3) {
+    padding: 0 0 0 2.5%;
+    font-weight: 200;
+    text-align: center;
+    width: 20%;
+}
+
+.tableWrapper h4 {
+    font-size: 15px;
 }
 
 #skillsLists {
@@ -603,14 +653,14 @@ body.light-mode .infoWrapper a img:hover {
 }
 
 
-#skills, #experience, #projects {
+#skills, #experience, #projects, #education, #courses {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 10%;
     margin-left: 5%;
 }
 
-#skills h1, #experience h1, #projects h1 {
+#skills h1, #experience h1, #projects h1, #education h1, #courses h1 {
     font-size: clamp(20px, 8vw, 40px);
     line-height: 1.1;
 }
@@ -807,22 +857,32 @@ body.light-mode .background-light {
 }
 
 @media (max-width: 1200px) {
-    #experience, #projects {
+    #experience, #projects, #education, #courses {
         flex-direction: column;
         align-items: center;
         margin-left: 0;
         text-align: center;
     }
 
-    #worksWrapper {
+    #worksWrapper, #tablesWrapper {
         width: 80%;
         display: flex;
         align-items: center;
     }
 
+    #tablesWrapper {
+        margin-top: 10%;
+    }
+
+    .tableWrapper {
+        width: 100%;
+        max-width: none;
+    }
+
     .workWrapper {
         margin: 10% 0 0 0;
         flex-direction: column;
+        max-width: 100%;
     }
 
     .infoWrapper, .workWrapper .imageWorkWrapper {
@@ -839,6 +899,25 @@ body.light-mode .background-light {
     }
 
     .workTitleWrapper {
+        width: 100%;
+    }
+
+    .infoWrapper h2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tableWrapper div {
+        flex-direction: column;
+    }
+    .tableWrapper div :nth-child(1), .tableWrapper div :nth-child(2) {
+        padding: 0 0 5px 0;
+        border: none;
+        width: 100%;
+    }
+
+    .tableWrapper div :nth-child(3) {
+        padding: 0;
         width: 100%;
     }
 }
