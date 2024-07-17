@@ -14,11 +14,6 @@
     :root { font-family: InterVariable, sans-serif; }
 }
 
-:root {
-    font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
-}
-
 * {
     margin: 0;
     padding: 0;
